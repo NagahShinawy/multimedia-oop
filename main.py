@@ -3,8 +3,9 @@ created by Nagaj at 25/05/2021
 """
 
 from data import movies
-from members import Producer, Director
+from members import Producer, Director, Singer
 from movie import Movie
+from song import Song
 
 movie: dict = movies[0]
 director = movie["director"].split()
@@ -44,3 +45,10 @@ if __name__ == "__main__":
 
     print("#" * 100)
     print(john.to_json())
+    monir = Singer("Mo", "Monir", "1950")
+    song = Song("song", "1990", john, monir)
+    print("#" * 100)
+    print(monir.to_json())
+    monir.add_art(song)
+    print(monir.to_json())
+    print(song.to_json())
