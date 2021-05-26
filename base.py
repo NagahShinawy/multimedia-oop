@@ -41,20 +41,30 @@ class MultiMedia(ABC):
         self.writers = []
         self.length = length
 
+    @staticmethod
+    def validate_value(other):
+        if not isinstance(other, (float, int)):
+            raise ValueError(f"value '{other}' can not be {other.__class__.__name__}, should, int, float")
+
     def __str__(self):
         return f"{self.__class__.__name__} <{self.title}> By {self.producer}"
 
     def __lt__(self, other):
+        self.validate_value(other)
         return self.length < other
 
     def __le__(self, other):
+        self.validate_value(other)
         return self.length <= other
 
     def __gt__(self, other):
+        self.validate_value(other)
         return self.length > other
 
     def __ge__(self, other):
+        self.validate_value(other)
         return self.length >= other
 
     def __eq__(self, other):
+        # self.validate_value(other)  # todo: fix this bug
         return self.length == other
