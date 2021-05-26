@@ -9,7 +9,7 @@ class Singer(Member, JsonifyMember):
 
     def __init__(self, fname, lname, dob):
         super().__init__(fname, lname, dob)
-        self.songs = []
+        self.songs = self.arts
 
     def add_art(self, song):
         self.songs.append(song)
@@ -24,7 +24,7 @@ class Director(Member, JsonifyMember):
 
     def __init__(self, fname, lname, dob=None):
         super().__init__(fname, lname, dob)
-        self.movies = []
+        self.movies = self.arts
 
     def add_art(self, movie):
         self.movies.append(movie)
@@ -39,7 +39,7 @@ class Producer(Member, JsonifyMember):
 
     def __init__(self, fname, lname, dob=None):
         super().__init__(fname, lname, dob)
-        self.work_history = []
+        self.work_history = self.arts
 
     def add_art(self, art):
         self.work_history.append(art)

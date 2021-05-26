@@ -10,9 +10,22 @@ class Member(ABC):
         self.fname = fname
         self.lname = lname
         self.dob = dob
+        self.arts = []
+
+    def __str__(self):
+        return f"{self.fname} {self.lname}"
 
     def __repr__(self):
-        return f"{self.fname} {self.lname}"
+        return f"{self.__class__.__name__}: {self.fname} {self.lname}"
+
+    def __contains__(self, item):
+        return item in self.arts
+
+    def __getitem__(self, item):
+        return self.arts[item]
+
+    def __len__(self):
+        return len(self.arts)
 
     @abstractmethod
     def add_art(self, art):

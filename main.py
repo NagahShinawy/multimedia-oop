@@ -52,3 +52,17 @@ if __name__ == "__main__":
     monir.add_art(song)
     print(monir.to_json())
     print(song.to_json())
+
+    print("#" * 100)
+    print(tim)
+    print(repr(tim))
+    print(song in tim)  # False  , you can do this using __contains__
+    print(mo in tim)  # True  , you can do this using __contains__
+
+    print("#" * 100)
+    for movie in tim:  # , you can do this using __getitem__
+        print(repr(movie))
+
+    print("#" * 100)
+    print(len(tim))  # , you can do this using __len__
+    print(len(john))  # , you can do this using __len__
