@@ -34,11 +34,27 @@ class Member(ABC):
 
 class MultiMedia(ABC):
 
-    def __init__(self, title, released, producer):
+    def __init__(self, title, released, producer, length):
         self.title = title
         self.producer = producer
         self.released = released
         self.writers = []
+        self.length = length
 
     def __str__(self):
         return f"{self.__class__.__name__} <{self.title}> By {self.producer}"
+
+    def __lt__(self, other):
+        return self.length < other
+
+    def __le__(self, other):
+        return self.length <= other
+
+    def __gt__(self, other):
+        return self.length > other
+
+    def __ge__(self, other):
+        return self.length >= other
+
+    def __eq__(self, other):
+        return self.length == other

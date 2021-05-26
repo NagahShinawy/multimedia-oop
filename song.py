@@ -8,8 +8,8 @@ from mixin import JsonifyMultiMedia
 
 class Song(MultiMedia, JsonifyMultiMedia):
 
-    def __init__(self, title, released, producer, singer):
-        super().__init__(title, released, producer)
+    def __init__(self, title, released, producer, singer, length=1):
+        super().__init__(title, released, producer, length)
         self.singer = singer
 
     def __repr__(self):
@@ -19,4 +19,3 @@ class Song(MultiMedia, JsonifyMultiMedia):
         data: dict = super().to_json()
         data.update({"singer": self.singer.to_json()})
         return data
-

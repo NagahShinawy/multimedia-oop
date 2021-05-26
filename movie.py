@@ -8,8 +8,8 @@ from mixin import JsonifyMultiMedia
 
 class Movie(MultiMedia, JsonifyMultiMedia):
 
-    def __init__(self, title, released, producer, director):
-        super().__init__(title, released, producer)
+    def __init__(self, title, released, producer, director, length=1):
+        super().__init__(title, released, producer, length)
         self.director = director
 
     def __repr__(self):
