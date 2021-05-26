@@ -66,3 +66,10 @@ if __name__ == "__main__":
     print("#" * 100)
     print(len(tim))  # , you can do this using __len__
     print(len(john))  # , you can do this using __len__
+
+    print("#" * 100)
+    print(mo == 1)   # , you can do this using __eq__
+    print(mo >= 1)   # , you can do this using __ge__
+    print(mo > 1)   # , you can do this using __gt__
+    print(mo <= 1)   # , you can do this using __le__
+    print(mo < 1)   # , you can do this using __lt__
